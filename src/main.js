@@ -8,5 +8,5 @@ import { beginning } from './view/templateBeginning.js';
 //import { login } from './view/templateLogin.js';
 
 myFunction();
-document.getElementById('root').innerHTML = beginning()
-//document.getElementById('root').innerHTML += login()
+document.getElementById('root').innerHTML = beginning();
+//document.getElementById('root').innerHTML += login();
