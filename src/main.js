@@ -5,6 +5,8 @@ import { app } from './firebaseConfig.js';
 console.log(app);
 
 import { beginning } from './view/templateBeginning.js';
+import { login } from './view/templateLogin.js';
 
 myFunction();
 document.getElementById('root').innerHTML = beginning()
+document.getElementById('root').appendChild(login ())
