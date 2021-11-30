@@ -1,10 +1,91 @@
-html {
-    box-sizing: border-box;
-    padding: 0%;
-    margin: 10%M
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.view-container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url("/src/images/fondoweb.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+header {
+    display: flex;
+    width: 100%;
+}
+
+.logoFuego {
+    margin: 5% 0% 0% 2%;
+    margin-left: 68%;
+    height: 20vh;
+    width: 8vw;
+    filter: drop-shadow(5px 5px 4px #000);
+}
+
+.imgPropagar {
+    margin: 2% 0% 0% 5%;
+    margin-left: 36%;
+    height: 18vh;
+    width: 43vw;
+    filter: drop-shadow(5px 5px 4px #000);
 }
 
 body {
+    display: flex;
     background-color: #52c6b3;
+    color: #0000;
     font-family: arial;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#login{
+    display: flex;
+    flex-direction: column;
+    font-family: arial;
+    padding: 10px;
+    height: 45px;
+    width: 220px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 502px;
+    margin-top: 30px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: #d8f1eb;
+    color:  #4b6863;
+    font-style: bold;
+    text-align: center;
+}
+
+#register {
+    display: flex;
+    flex-direction: column;
+    font-family: arial;
+    padding: 10px;
+    height: 45px;
+    width: 220px;
+    border-radius: 20Px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 502px;
+    margin-top: 30px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color:  #4b6863;
+    color:  #d8f1eb;
+    font-style: bold;
+    text-align: center;
 }
