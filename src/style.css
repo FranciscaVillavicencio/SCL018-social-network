@@ -60,10 +60,11 @@ header {
     margin: 5% 0% 0% 0%;
     margin-left: 22%;
     width: 300px;
-    font-family: Fuego Fatuo;
-    font-weight: bold;
+    font-family: arial;
+    font-style: bold;
     font-size: 30px;
     color: #000;
+    filter: drop-shadow(5px 5px 4px #000);
 }
 
 /* View beginnig*/

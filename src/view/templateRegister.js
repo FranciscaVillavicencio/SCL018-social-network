@@ -12,7 +12,7 @@ export const register = () => {
     <img class = "imgPropagar" src = "resources/images/propagar.png" alt = "logo del nombre de la página web, propagar en mayúscula y degradado de naranjos y
     amarillos con contorno de fuego">
     <div class="title-container">
-    <h1 class="title">Difusión de talleres y conversatorios</h1>
+    <h1 class="title">Espacio para la difusión de talleres, charlas y conversatorios.</h1>
     </div>
     </header>
     <div class = "register-container">
