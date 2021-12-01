@@ -18,6 +18,8 @@ export const beginning = () => {
     <button id = "login"  class = "btn-login">INICIAR SESIÓN</button>
     <button id = "register"  class = "btn-register">REGÍSTRATE</button>
     </div>
+    <hr class="hr-beginning-center"/>
+  </div>
     `;
 
   divBeginning.innerHTML = viewBeginning;
