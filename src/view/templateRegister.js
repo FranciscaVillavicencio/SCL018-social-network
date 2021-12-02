@@ -19,7 +19,7 @@ export const register = () => {
       console.log(email);
       console.log(password);
       if (password.lenght < 6) {
-          alert("tu constraseña es muy corta")
+          alert("tu constraseña es muy corta")//preguntar porque no se activan las alertas//
       }else{
           signup(email,password);
           
