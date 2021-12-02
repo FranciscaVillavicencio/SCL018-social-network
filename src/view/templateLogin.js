@@ -1,4 +1,4 @@
-import { signup } from '../firebaseConfig.js';
+import { loginUsuario } from '../firebaseConfig.js';
 
 export const login = () => {
     const divLogin = document.createElement ("div");
@@ -22,5 +22,20 @@ export const login = () => {
     `;
 
     divLogin.innerHTML = viewLogin;
-    return divLogin;
-};
+     
+      divLogin.querySelector('#btnLogin').addEventListener ('click', () =>{
+
+      const email = divLogin.querySelector('#emailLogin').value;
+      const password = divLogin.querySelector('#passwordLogin').value;
+      loginUsuario(email, password);
+      
+     });
+
+     return divLogin;
+
+     };
+
+
+
+
+

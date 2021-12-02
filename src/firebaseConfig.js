@@ -3,7 +3,11 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase
 import {
   getAuth,
   createUserWithEmailAndPassword,
-} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
+  signInWithEmailAndPassword,
+  signOut 
+} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; //de deben importar desde firebase todas las funciones correspondientes segun lo que queramos hacer. 
+
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -27,8 +31,8 @@ export const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-export const signup = (email, password) => {
-  //funcion que hay que armar//
+export const signUp = (email, password) => {
+  //funcion para el registro de usuarios
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
@@ -42,3 +46,49 @@ export const signup = (email, password) => {
       // ..
     });
 };
+
+// función para el login de usuarios//
+
+export const loginUsuario =(email, password) => { 
+     signInWithEmailAndPassword(auth, email, password) //funcion exportada de firebase, la cual se debe agregar dentro de una constante//
+    .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    window.location.hash = "#/home"; //con este codigo se hace el cambio de hash al home//
+    
+    // ...
+    })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    });
+
+    };
+
+
+    // cierre de sesión//
+
+    //funcion "contenedora"// ¿poque va sin parametros??//
+    export const loginOut = () =>{
+
+   /*const auth = getAuth();*/
+   signOut(auth).then(() => {
+    window.location.hash = "#/login";
+  // Sign-out successful.
+   }).catch((error) => {
+  // An error happened.
+   });
+
+    };
+
+    // funcion para postear// 
+
+
+
+
+
+    
+
+
+
+
