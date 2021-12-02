@@ -1,24 +1,41 @@
+import { signUp } from '../firebaseConfig.js';
+
 export const beginning = () => {
-  const divContainer = document.createElement("div");
+  const divBeginning = document.createElement("div");
+  divBeginning.className = "view-container";
   const viewBeginning = `
 
-    <button id = "login"  class = "btnLogin">Iniciar Sesión</button>
-    <button id = "register"  class = "btnregister">Regístrate</button>
+    <header>
+    <div class = "images-container">
+    <img class = "logoFuego" src = "resources/images/logofuego.png" alt = "logo de fuego con carita blanca y sonriente">
+    <img class = "imgPropagar" src = "resources/images/propagar.png" alt = "logo del nombre de la página web, propagar en mayúscula y degradado de naranjos y
+    amarillos con contorno de fuego">
+    <div class="title-container">
+    <h1 class="title">Espacio para la difusión de talleres, charlas y conversatorios.</h1>
+    </div>
+    </header>
+    
+    <div class = "beginning-container">
+    <button id = "login"  class = "btn-login">INICIAR SESIÓN</button>
+    <button id = "register"  class = "btn-register">REGÍSTRATE</button>
+    </div>
+    <hr class="hr-beginning-center"/>
+  </div>
+    `
 
-    `;
-   divContainer.innerHTML = viewBeginning;
-   //window.location.hash//
-   divContainer.querySelector("#login").addEventListener ("click",() =>{
+  divBeginning.innerHTML = viewBeginning;
+  //window.location.hash//
+  divBeginning.querySelector("#login").addEventListener("click", () => {
     window.location.hash = "#/login";
-   }
-   );
- 
-   divContainer.querySelector("#register").addEventListener ("click",() =>{
-    window.location.hash = "#/register";
-   }
-   );
-   
+  }
+  );
 
-  return divContainer;
-  
+  divBeginning.querySelector("#register").addEventListener("click", () => {
+    window.location.hash = "#/register";
+  }
+  );
+
+
+  return divBeginning;
+  console.log(beginning);
 };

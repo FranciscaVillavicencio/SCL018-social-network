@@ -1,4 +1,4 @@
-import { signup } from '../firebaseConfig.js';
+import { signUp } from '../firebaseConfig.js';
 
 export const register = () => {
     const divRegister = document.createElement ("div");
@@ -21,7 +21,7 @@ export const register = () => {
       if (password.lenght < 6) {
           alert("tu constraseña es muy corta")//preguntar porque no se activan las alertas//
       }else{
-          signup(email,password);
+          signUp(email,password);
           
       }
      });

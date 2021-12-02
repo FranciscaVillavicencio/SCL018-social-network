@@ -31,7 +31,7 @@ export const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-export const signup = (email, password) => {
+export const signUp = (email, password) => {
   //funcion para el registro de usuarios
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -83,7 +83,7 @@ export const loginUsuario =(email, password) => {
 
     // funcion para postear// 
 
-    
+
 
 
 
