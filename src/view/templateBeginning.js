@@ -14,14 +14,13 @@ export const beginning = () => {
     <h1 class="title">Espacio para la difusión de talleres, charlas y conversatorios.</h1>
     </div>
     </header>
-    
     <div class = "beginning-container">
     <button id = "login"  class = "btn-login">INICIAR SESIÓN</button>
     <button id = "register"  class = "btn-register">REGÍSTRATE</button>
     </div>
     <hr class="hr-beginning-center"/>
   </div>
-    `
+    `;
 
   divBeginning.innerHTML = viewBeginning;
   //window.location.hash//

@@ -4,7 +4,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut 
+  signOut
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; //de deben importar desde firebase todas las funciones correspondientes segun lo que queramos hacer. 
 
 
@@ -49,37 +49,37 @@ export const signUp = (email, password) => {
 
 // función para el login de usuarios//
 
-export const loginUsuario =(email, password) => { 
-     signInWithEmailAndPassword(auth, email, password) //funcion exportada de firebase, la cual se debe agregar dentro de una constante//
+export const loginUsuario = (email, password) => {
+  signInWithEmailAndPassword(auth, email, password) //funcion exportada de firebase, la cual se debe agregar dentro de una constante//
     .then((userCredential) => {
-    // Signed in
-    const user = userCredential.user;
-    window.location.hash = "#/home"; //con este codigo se hace el cambio de hash al home//
-    
-    // ...
+      // Signed in
+      const user = userCredential.user;
+      window.location.hash = "#/home"; //con este codigo se hace el cambio de hash al home//
+
+      // ...
     })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
     });
 
-    };
+};
 
 
-    // cierre de sesión//
+// cierre de sesión//
 
-    //funcion "contenedora"// ¿poque va sin parametros??//
-    export const loginOut = () =>{
+//funcion "contenedora"// ¿poque va sin parametros??//
+export const loginOut = () => {
 
-   /*const auth = getAuth();*/
-   signOut(auth).then(() => {
+  /*const auth = getAuth();*/
+  signOut(auth).then(() => {
     window.location.hash = "#/login";
-  // Sign-out successful.
-   }).catch((error) => {
-  // An error happened.
-   });
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+  });
 
-    };
+};
 
     // funcion para postear// 
 
@@ -87,7 +87,7 @@ export const loginUsuario =(email, password) => {
 
 
 
-    
+
 
 
 
