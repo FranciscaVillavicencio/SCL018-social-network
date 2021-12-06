@@ -1,23 +1,67 @@
-import { loginOut } from '../firebaseConfig.js';
+
+
+
+import { loginOut, postMuro } from "../firebaseConfig.js";
+
 
 export const home = () => {
-    const divHome = document.createElement ("div");
-    const viewHome = `
+  const divHome = document.createElement("div");
+  const viewHome = `
 
-    <h1>hola<h1>
+    <body> 
+      <header>
+      <section encabezado="encabezado">
+      <button id= btnSalida> Cierre de sesion</button>
+      </section>
+      </header>
 
-    <button id= btnSalida> Cierre de sesion</button>
+      <section class = "contenedorPadre"
 
-    ` 
-    divHome.innerHTML = viewHome
+      <form id = "contenedor">
 
-    const loginOut = divHome.querySelector('#btnSalida').addEventListener ('click', () =>{
-        window.location.hash = "#/login";
-    
+      <div class = "nombre">
+      <input type = "usuario" id = "nameUsuario"  class= "name-usuario" placeholder = "usuario aqui">
+      </div>
+      
+      <div class = "contenido">
+      <textarea = "post" id = "postUsuario" class = "post-usuario" placeholder = "post aqui"></textarea>
+      </div>
+
+      <div class = "boton">
+      <button id= btnPost>post</button>
+      </div>
+
+      </form>
+
+      </section>
+  
+
+    <footer>pie de la página</footer>
+
+  </body>
+
+    `;
+
+  //boton para "postear" + la funcion de firestore//
+   divHome.innerHTML = viewHome;
+
+    const posteo = divHome.querySelector('#btnPost');
+    posteo.addEventListener('click', () => {
+    const user = divHome.querySelector('#nameUsuario').value;
+    const posting = divHome.querySelector('#postUsuario').value;
+
+    console.log (posting,user);
+    postMuro(posting, user);
+
+  })
+
+  //boton para cerrar sesión//
+  const loginOut = divHome
+    .querySelector("#btnSalida")
+    .addEventListener("click", () => {
+      window.location.hash = "#/login";
+      
     });
 
-    return divHome;
-
+  return divHome;
 };
-
-

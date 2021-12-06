@@ -26,11 +26,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-
-// función para crear usuario con mail y contraseña//
-
 const auth = getAuth(app);
 
+
+
+// función para crear usuario con mail y contraseña//
 export const signUp = (email, password) => {
   //funcion para el registro de usuarios
   createUserWithEmailAndPassword(auth, email, password)
@@ -73,7 +73,7 @@ export const loginOut = () => {
 
   /*const auth = getAuth();*/
   signOut(auth).then(() => {
-    window.location.hash = "#/login";
+    window.location.hash = "#/beginning";
     // Sign-out successful.
   }).catch((error) => {
     // An error happened.
