@@ -1,4 +1,8 @@
-import { loginOut } from "../firebaseConfig.js";
+
+
+
+import { loginOut, postMuro } from "../firebaseConfig.js";
+
 
 export const home = () => {
   const divHome = document.createElement("div");
@@ -38,23 +42,25 @@ export const home = () => {
 
     `;
 
- //boton para "postear"//
-  divHome.innerHTML = viewHome;
+  //boton para "postear" + la funcion de firestore//
+   divHome.innerHTML = viewHome;
 
-  divHome.querySelector('#btnPost').addEventListener('click', () => {
+    const posteo = divHome.querySelector('#btnPost');
+    posteo.addEventListener('click', () => {
+    const user = divHome.querySelector('#nameUsuario').value;
+    const posting = divHome.querySelector('#postUsuario').value;
 
-    const post = divHome.querySelector('#postUsuario').value;
-    console.log(post);
+    console.log (posting,user);
+    postMuro(posting, user);
 
-  });
-
-
+  })
 
   //boton para cerrar sesión//
   const loginOut = divHome
     .querySelector("#btnSalida")
     .addEventListener("click", () => {
       window.location.hash = "#/login";
+      
     });
 
   return divHome;
