@@ -1,6 +1,4 @@
 
-
-
 import { loginOut, postMuro } from "../firebaseConfig.js";
 
 

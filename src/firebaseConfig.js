@@ -1,3 +1,5 @@
+
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
 
 import {
@@ -6,6 +8,8 @@ import {
   signInWithEmailAndPassword,
   signOut
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; //de deben importar desde firebase todas las funciones correspondientes segun lo que queramos hacer. 
+
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 
 
 
@@ -27,6 +31,7 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 
 
@@ -83,9 +88,27 @@ export const loginOut = () => {
 
     // funcion para postear// 
 
+      export const postMuro = async (posting,user) => {
+      const docRef = await addDoc(collection(db, "publicaciones"), {
+       post: posting,
+       correo: user
+      });
+      console.log("Document written with ID: ", docRef.id);
+ 
+
+    };
+   
 
 
 
+ 
+
+    
+
+    
+   
+    
+    
 
 
 
