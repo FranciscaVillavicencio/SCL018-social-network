@@ -16,7 +16,7 @@ export const register = () => {
     </div>
     </header>
     <div class = "register-container">
-    <input id = "nameRegister" class = "register-name" placeholder = "NOMBRE"></input>
+    <input id = "nameRegister" class = "register-name" placeholder = "NAME"></input>
     <input id = "emailRegister" class = "register-email" placeholder = "E-MAIL"></input>
     <input id = "passwordRegister"  class = "register-password" placeholder = "PASSWORD"></input>
     <button id = "btnRegister" class = "register-enter">ENTER</button>
