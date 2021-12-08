@@ -5,12 +5,13 @@ export const home = () => {
     const viewHome = `
 
 
-    <header>
+    <header> 
     <div class = "header-container">
     <img class = "home-logoFuego" src = "resources/images/logofuego.png" alt = "logo de fuego con carita blanca y sonriente">
     <img class = "home-imgPropagar" src = "resources/images/propagar.png" alt = "logo del nombre de la página web, propagar en mayúscula y degradado de naranjos y
     amarillos con contorno de fuego">
-
+    <img src = "resources/images/out.png" alt = "cierre de sesión" class = "log-out" id = "logOut">
+    <section encabezado = "encabezado">
     </section>
     </div>
     </header>
@@ -53,10 +54,12 @@ export const home = () => {
 
     //boton para cerrar sesión//
     const loginOut = divHome
-        .querySelector("#btnSalida")
+        .querySelector("#logOut")
         .addEventListener("click", () => {
             window.location.hash = "#/login";
         });
 
     return divHome;
 };
+
+
