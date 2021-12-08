@@ -80,7 +80,7 @@ header {
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 100px;
+    margin-left: 20px;
     margin-top: 200px;
     line-height: 20px;
     letter-spacing: 0em;
@@ -102,7 +102,7 @@ header {
     font-size: 30px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 100px;
+    margin-left: 20px;
     margin-top: 40px;
     line-height: 20px;
     letter-spacing: 0em;
@@ -129,9 +129,8 @@ header {
     width: 100%;
     height: 2px;
     margin-top: 120%;
-    margin-left: 265%;
+    margin-left: 253%;
 }
-
 
 /* View login*/
 
@@ -146,7 +145,7 @@ header {
     font-size: 30px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 100px;
+    margin-left: 20px;
     margin-top: 200px;
     line-height: 20px;
     letter-spacing: 0em;
@@ -168,7 +167,7 @@ header {
     font-size: 30px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 100px;
+    margin-left: 20px;
     margin-top: 40px;
     line-height: 20px;
     letter-spacing: 0em;
@@ -190,7 +189,7 @@ header {
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 100px;
+    margin-left: 20px;
     margin-top: 40px;
     line-height: 20px;
     letter-spacing: 0em;
@@ -214,7 +213,7 @@ header {
     font-size: 30px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 100px;
+    margin-left: 20px;
     margin-top: 200px;
     line-height: 20px;
     letter-spacing: 0em;
@@ -236,7 +235,7 @@ header {
     font-size: 30px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 100px;
+    margin-left: 20px;
     margin-top: 40px;
     line-height: 20px;
     letter-spacing: 0em;
@@ -258,7 +257,7 @@ header {
     font-size: 30px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 100px;
+    margin-left: 20px;
     margin-top: 40px;
     line-height: 20px;
     letter-spacing: 0em;
@@ -280,7 +279,7 @@ header {
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 100px;
+    margin-left: 20px;
     margin-top: 40px;
     line-height: 20px;
     letter-spacing: 0em;
@@ -290,3 +289,30 @@ header {
     font-style: bold;
     text-align: center;
 }
+
+/* View home */
+
+.header-container {
+    display: flex;
+    height: 110px;
+    width: 100%;
+    background-color: #4f5755;
+}
+
+.home-logoFuego {
+    margin: 1% 0% 0% 1%;
+    margin-left: 3%;
+    height: 80px;
+    width: 70px;
+    filter: drop-shadow(5px 5px 4px #000);
+}
+
+.home-imgPropagar {
+    margin: 1% 0% 0% 1%;
+    margin-left: 1%;
+    height: 80px;
+    width: 450px;
+    filter: drop-shadow(5px 5px 4px #000);
+}
+
+

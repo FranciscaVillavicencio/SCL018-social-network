@@ -86,29 +86,29 @@ export const loginOut = () => {
 
 };
 
-    // funcion para postear// 
+// funcion para postear// 
 
-      export const postMuro = async (posting,user) => {
-      const docRef = await addDoc(collection(db, "publicaciones"), {
-       post: posting,
-       correo: user
-      });
-      console.log("Document written with ID: ", docRef.id);
- 
-
-    };
-   
+export const postMuro = async (posting, user) => {
+  const docRef = await addDoc(collection(db, "publicaciones"), {
+    post: posting,
+    correo: user
+  });
+  console.log("Document written with ID: ", docRef.id);
 
 
+};
 
- 
 
-    
 
-    
-   
-    
-    
+
+
+
+
+
+
+
+
+
 
 
 

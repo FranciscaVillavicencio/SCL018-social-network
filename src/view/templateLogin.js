@@ -16,7 +16,7 @@ export const login = () => {
     </header>
     <div class = "login-container">
     <input id = "emailLogin" class = "login-email" placeholder = "EMAIL"></input>
-    <input id = "passwordLogin" class = "login-password" placeholder = "PASSWORD"></input>
+    <input id = "passwordLogin" type = "password" class = "login-password" placeholder = "PASSWORD"></input>
     <button id = "btnLogin" class = "login-enter">ENTER</button>
     </div> 
     `;

@@ -11,14 +11,14 @@ export const register = () => {
     <img class = "logoFuego" src = "resources/images/logofuego.png" alt = "logo de fuego con carita blanca y sonriente">
     <img class = "imgPropagar" src = "resources/images/propagar.png" alt = "logo del nombre de la página web, propagar en mayúscula y degradado de naranjos y
     amarillos con contorno de fuego">
-    <div class="title-container">
-    <h1 class="title">Espacio para la difusión de talleres, charlas y conversatorios.</h1>
+    <div class = "title-container">
+    <h1 class = "title">Espacio para la difusión de talleres, charlas y conversatorios.</h1>
     </div>
     </header>
     <div class = "register-container">
-    <input id = "nameRegister" class = "register-name" placeholder = "NOMBRE"></input>
+    <input id = "nameRegister" class = "register-name" placeholder = "NAME"></input>
     <input id = "emailRegister" class = "register-email" placeholder = "E-MAIL"></input>
-    <input id = "passwordRegister"  class = "register-password" placeholder = "PASSWORD"></input>
+    <input id = "passwordRegister" type = "password" class = "register-password" placeholder = "PASSWORD"></input>
     <button id = "btnRegister" class = "register-enter">ENTER</button>
     </div>
     `;
