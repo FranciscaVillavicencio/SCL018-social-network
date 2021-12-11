@@ -24,11 +24,15 @@ export const home = () => {
     <button id = btnPost>PUBLICAR</button>
     </div>
     </form>
-    <div id="publicaciones"></div>
+    <div id="publicaciones">
+    
+    </div>
+
     </section>
 
 
     `;
+
 
     //boton para "postear" + la funcion de firestore//
     divHome.innerHTML = viewHome;
@@ -47,20 +51,21 @@ export const home = () => {
         publicaciones.forEach((element) => {
             divHome.querySelector("#publicaciones").innerHTML += `
 
-            <p>id=${element.post}</p>
-
-            <!--<section class="public" id=${element.id}"
-            <div class= "contenedorPost">
-            <div class= "user-picture">
+            <section class = "contenedorPost"> 
+            <div class = "contenido">
+            <textarea class = "post-User">id =${element.post}</textarea>
             </div>
+            <div class = "boton">
+            <button id = "btnEliminar">Eliminar</button>
             </div>
-            </section>-->
-
-            
+            </section>
             `;
+
+
         });
         readData(post); 
     }; 
+
 
     //boton para cerrar sesión//
     const loginOut = divHome
