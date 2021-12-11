@@ -5,7 +5,6 @@ export const register = () => {
     divRegister.className = "view-container";
     const viewRegister = `
 
-    
     <header>
     <div class = "images-container">
     <img class = "logoFuego" src = "resources/images/logofuego.png" alt = "logo de fuego con carita blanca y sonriente">
@@ -21,6 +20,8 @@ export const register = () => {
     <input id = "passwordRegister" type = "password" class = "register-password" placeholder = "PASSWORD"></input>
     <button id = "btnRegister" class = "register-enter">ENTER</button>
     </div>
+
+    
     `;
 
     divRegister.innerHTML = viewRegister;

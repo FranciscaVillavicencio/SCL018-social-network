@@ -1,15 +1,16 @@
-
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
 
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
+  
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; //de deben importar desde firebase todas las funciones correspondientes segun lo que queramos hacer. 
 
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
+import { getFirestore, Timestamp, collection, addDoc, getDocs, /* onSnapshot, query, */ } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 
 
 
@@ -70,6 +71,32 @@ export const loginUsuario = (email, password) => {
 
 };
 
+// Función para autenticar con Google//
+
+export const signInGoogle = () => {
+const provider = new GoogleAuthProvider(app);
+const auth = getAuth();
+signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    window.location.hash = "#/home";
+    return user;
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+}
 
 // cierre de sesión//
 
@@ -88,15 +115,54 @@ export const loginOut = () => {
 
 // funcion para postear// 
 
-export const postMuro = async (posting, user) => {
+/*   export const postMuro = async (posting, user) => {
   const docRef = await addDoc(collection(db, "publicaciones"), {
     post: posting,
-    correo: user
+    correo: user,
   });
-  console.log("Document written with ID: ", docRef.id);
+  console.log("Document written with ID: ", docRef.id); */
+/ */
+  export const postMuro = async (input) => {
+    const user = auth.currentUser;
+    const docRef = await addDoc(collection(db, 'publicaciones'), {
+      username: auth.currentUser.displayName,
+      userId: auth.currentUser.uid,
+      post: input,
+      correo: user.email,
+      foto: user.photoURL,
+      datePosted: Timestamp.fromDate(new Date()),
+    });
+    return docRef;
+  } 
+
+  export const readData = async () => {
+    const q = await getDocs(collection(db, 'publicaciones'));
+    const posts = [];
+    q.forEach((element) => {
+      posts.push({
+        id: element.id,//accder id del documento
+        ...element.data(),//acceder id del usuario
+      });
+    });
+    return posts;
+  }
+  
+/*   // Función para leer data//
+  export const readData = (callback) => {
+    const q = query(collection(db, "publicaciones"));
+    onSnapshot(q, (querySnapshot) => {
+  const postData = [];
+  querySnapshot.forEach((element) => {
+      postData.push({
+        id: element.id, //Se accede al id del documento
+        ...element.data(), //Se accede al id del usuario
+      });
+    });
+    callback(postData);
+  });
+  }; */
 
 
-};
 
 
 

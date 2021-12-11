@@ -1,4 +1,4 @@
-import { loginOut, postMuro } from "../firebaseConfig.js";
+import { loginOut, postMuro,  readData,  } from "../firebaseConfig.js";
 
 export const home = () => {
     const divHome = document.createElement("div");
@@ -15,27 +15,17 @@ export const home = () => {
     </section>
     </div>
     </header>
-
-    <section class = "contenedorPadre"
-
-    <form id = "contenedor">
-
-    <div class = "nombre">
-    <input type = "usuario" id = "nameUsuario"  class= "name-usuario" placeholder = "usuario aqui">
-    </div>
-    
+    <section class = "contenedorPadre">
+    <form id = "contenedor">  
     <div class = "contenido">
-    <textarea = "post" id = "postUsuario" class = "post-usuario" placeholder = "post aqui"></textarea>
+    <textarea = "post" id = "postUsuario" class = "post-usuario" placeholder = "ESCRIBE TU POST AQUÍ"></textarea>
     </div>
-
     <div class = "boton">
-    <button id = btnPost>post</button>
+    <button id = btnPost>PUBLICAR</button>
     </div>
-
     </form>
-
+    <div id="publicaciones"></div>
     </section>
-
 
 
     `;
@@ -45,21 +35,41 @@ export const home = () => {
 
     const posteo = divHome.querySelector("#btnPost");
     posteo.addEventListener("click", () => {
-        const user = divHome.querySelector("#nameUsuario").value;
+       /*  const user = divHome.querySelector("#nameUsuario").value; */
         const posting = divHome.querySelector("#postUsuario").value;
 
-        console.log(posting, user);
-        postMuro(posting, user);
+        console.log(posting);
+        postMuro(posting);
     });
+
+     //Crear tu post//
+    const post = (publicaciones) => {
+        publicaciones.forEach((element) => {
+            divHome.querySelector("#publicaciones").innerHTML += `
+
+            <p>id=${element.post}</p>
+
+            <!--<section class="public" id=${element.id}"
+            <div class= "contenedorPost">
+            <div class= "user-picture">
+            </div>
+            </div>
+            </section>-->
+
+            
+            `;
+        });
+        readData(post); 
+    }; 
 
     //boton para cerrar sesión//
     const loginOut = divHome
         .querySelector("#logOut")
         .addEventListener("click", () => {
-            window.location.hash = "#/login";
+            window.location.hash = "";
         });
+        
+        readData().then((value) => post(value)).catch((error) => console.error(error));
 
     return divHome;
 };
-
-
