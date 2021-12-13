@@ -6,7 +6,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url("/resources/images/fondoweb.png")
+    background-image: url("/resources/images/fondoweb.png");
 }
 
 /* Containers*/
@@ -132,6 +132,26 @@ header {
     margin-left: 253%;
 }
 
+.subtitle {
+    margin: 132% 0% 0% 0%;
+    margin-left: 175%;
+    width: 100%;
+    font-family: arial;
+    font-style: bold;
+    font-size: 30px;
+    color: #d8f1eb;
+    filter: drop-shadow(5px 5px 4px #000);
+}
+
+.logoGoogle {
+    display: flex;
+    justify-content: right;
+    margin: 10% 0% 0% 5%;
+    margin-left: 190%;
+    height: 80px;
+    width: 80px;
+    filter: drop-shadow(5px 5px 4px #000);
+}
 
 /* View login*/
 
@@ -289,4 +309,147 @@ header {
     color: #d8f1eb;
     font-style: bold;
     text-align: center;
+}
+
+/* View home */
+
+.header-container {
+    display: flex;
+    height: 110px;
+    width: 100%;
+    background-color: #4f5755;
+    filter: drop-shadow(5px 5px 4px #000);
+}
+
+.home-logoFuego {
+    margin: 1% 0% 0% 1%;
+    margin-left: 3%;
+    height: 80px;
+    width: 70px;
+    filter: drop-shadow(5px 5px 4px #000);
+}
+
+.home-imgPropagar {
+    margin: 1% 0% 0% 1%;
+    margin-left: 1%;
+    height: 80px;
+    width: 450px;
+    filter: drop-shadow(5px 5px 4px #000);
+}
+
+.log-out {
+    margin: 1.5% 0% 0% 1%;
+    margin-left: 53%;
+    height: 70px;
+    width: 60px;
+    filter: drop-shadow(5px 5px 4px #000);
+}
+
+.contenedorPadre {
+    display: flex;
+    margin: 50px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#postUsuario {
+    justify-content: center;
+    background-color: #ffff;
+    border-radius: 2% 2% 2% 2%;
+    height: 200px;
+    width: 700px;
+    text-align: center;
+    font-size: 15px;
+    filter: drop-shadow(5px 5px 4px #000);
+    padding: 50px;
+}
+
+#btnPost {
+    display: flex;
+    flex-direction: column;
+    font-family: arial;
+    padding: 10px;
+    height: 45px;
+    width: 220px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 20px;
+    margin-top: 20px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: #f2893c;
+    color: #d8f1eb;
+    text-align: center;
+}
+
+.hr-home-center {
+    background-color: #d8f1eb;
+    box-shadow: 0 0 7px #000;
+    border: none;
+    width: 100pz;
+    height: 2px;
+    margin-top: 50px;
+    margin-left: 2%;
+}
+
+
+/*view post*/
+
+.elements-user {
+    display: flex;
+    margin-top: 40px;
+    background-color: #f9c647;
+    border-radius: 10px 10px 0px 0px;
+    height: 60px;
+    text-align: center;
+    filter: drop-shadow(5px 5px 4px #000);
+}
+
+#photoUser {
+    margin-top: 7px;
+    margin-left: 10px;
+    border-radius: 50% 50% 50% 50%;
+    filter: drop-shadow(5px 5px 4px #000);
+    height: 40px;
+}
+
+#userName {
+    margin-top: 15px;
+    margin-left: 15px;
+    color: #4b6863;
+    font-family: arial;
+    font-style: bold;
+    font-size: 25px;
+    filter: drop-shadow(0px 4px 4px 0px #00000040);
+}
+
+#postUser {
+    background-color: #ffff;
+    border-radius: 2% 2% 2% 2%;
+    height: 100px;
+    width: 700px;
+    text-align: center;
+    font-size: 15px;
+    filter: drop-shadow(5px 5px 4px #000);
+    padding: 20px;
+}
+
+.btnDelete {
+    margin-top: 20px;
+    margin-left: 30px;
+    background-color: transparent;
+    border: none;
+    background-size: 100px;
+    border-radius: 10px;
+    background-color: #f2893c;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.img-dustman {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
 }
