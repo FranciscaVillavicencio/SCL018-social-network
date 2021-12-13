@@ -10,7 +10,7 @@ import {
   
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; //de deben importar desde firebase todas las funciones correspondientes segun lo que queramos hacer. 
 
-import { getFirestore, Timestamp, collection, addDoc, getDocs, /* onSnapshot, query, */ } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
+import { getFirestore, Timestamp, collection, addDoc, onSnapshot, query, orderBy, /* onSnapshot, query, */ } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 
 
 
@@ -135,7 +135,18 @@ export const loginOut = () => {
     return docRef;
   } 
 
-  export const readData = async () => {
+  export const readData = (callback) => {
+    const q = query(collection(db, "publicaciones") ,orderBy('datePosted', 'desc'));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const posts = [];
+      querySnapshot.forEach((_doc) => {
+        posts.push({ ..._doc.data(), id: _doc.id });
+      });
+      callback(posts);
+    });
+  };
+  
+  /* export const readData = async () => {
     const q = await getDocs(collection(db, 'publicaciones'));
     const posts = [];
     q.forEach((element) => {
@@ -145,7 +156,7 @@ export const loginOut = () => {
       });
     });
     return posts;
-  }
+  } */
   
 /*   // Función para leer data//
   export const readData = (callback) => {

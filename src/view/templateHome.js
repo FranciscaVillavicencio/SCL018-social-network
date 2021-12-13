@@ -18,16 +18,15 @@ export const home = () => {
     <section class = "contenedorPadre">
     <form id = "contenedor">  
     <div class = "contenido">
-    <textarea = "post" id = "postUsuario" class = "post-usuario" placeholder = "ESCRIBE TU POST AQUÍ"></textarea>
+    <textarea = "post" id = "postUsuario" class = "post-usuario" placeholder = "ESCRIBE TU POST AQUÍ. Considera agregar información necesaria para que se comuniquen contigo, por ej. tu red social o datos del taller, charla o conversatorio que quieras mencionar :)"></textarea>
     </div>
     <div class = "boton">
     <button id = btnPost>PUBLICAR</button>
+    <hr class = "hr-home-center"/>
     </div>
     </form>
-    <div id="publicaciones">
-    
+    <div id = "publicaciones">
     </div>
-
     </section>
 
 
@@ -53,17 +52,21 @@ export const home = () => {
 
             <section class = "contenedorPost"> 
             <div class = "contenido">
-            <textarea class = "post-User">id =${element.post}</textarea>
+            <div class = "elements-user">
+            <img class = "photo-user" id = "photoUser" src = ${element.foto}>
+            <h1 class = "user-name" id = "userName">${element.username}</h1>
             </div>
-            <div class = "boton">
-            <button id = "btnEliminar">Eliminar</button>
+            <div class = "elements-post">
+            <textarea class = "post-User" id = "postUser"> ${element.post}</textarea>
+            </div>
+            <img src = "resources/images/delete.png" alt = "ícono de basurero blanco" class = "btn-delete" id = "btnDelete">
             </div>
             </section>
             `;
 
 
         });
-        readData(post); 
+
     }; 
 
 
@@ -74,7 +77,6 @@ export const home = () => {
             window.location.hash = "";
         });
         
-        readData().then((value) => post(value)).catch((error) => console.error(error));
-
+    readData(post); 
     return divHome;
 };
