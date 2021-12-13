@@ -1,4 +1,4 @@
-import { signUp } from '../firebaseConfig.js';
+import { signUp, signInGoogle  } from '../firebaseConfig.js';
 
 export const beginning = () => {
   const divBeginning = document.createElement("div");
@@ -19,7 +19,11 @@ export const beginning = () => {
     <button id = "register"  class = "btn-register">REGÍSTRATE</button>
     </div>
     <hr class="hr-beginning-center"/>
-  </div>
+    <div class="subtitle-container">
+    <h2 class="subtitle">Accede con</h1>
+    <img class = "logoGoogle" id="google" src = "resources/images/google.png" alt = "logo de Google">
+    </div>
+  
     `;
 
   divBeginning.innerHTML = viewBeginning;
@@ -31,6 +35,11 @@ export const beginning = () => {
 
   divBeginning.querySelector("#register").addEventListener("click", () => {
     window.location.hash = "#/register";
+  }
+  );
+
+  divBeginning.querySelector("#google").addEventListener("click", () => {
+    signInGoogle();
   }
   );
 

@@ -6,7 +6,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url("/resources/images/fondoweb.png")
+    background-image: url("/resources/images/fondoweb.png");
 }
 
 /* Containers*/
@@ -130,6 +130,27 @@ header {
     height: 2px;
     margin-top: 120%;
     margin-left: 253%;
+}
+
+.subtitle {
+    margin: 132% 0% 0% 0%;
+    margin-left: 175%;
+    width: 100%;
+    font-family: arial;
+    font-style: bold;
+    font-size: 30px;
+    color: #d8f1eb;
+    filter: drop-shadow(5px 5px 4px #000);
+}
+
+.logoGoogle {
+    display: flex;
+    justify-content: right;
+    margin: 10% 0% 0% 5%;
+    margin-left: 190%;
+    height: 80px;
+    width: 80px;
+    filter: drop-shadow(5px 5px 4px #000);
 }
 
 /* View login*/
@@ -297,6 +318,7 @@ header {
     height: 110px;
     width: 100%;
     background-color: #4f5755;
+    filter: drop-shadow(5px 5px 4px #000);
 }
 
 .home-logoFuego {
@@ -323,6 +345,70 @@ header {
     filter: drop-shadow(5px 5px 4px #000);
 }
 
+.contenedorPadre {
+    display: flex;
+    margin: 50px;
+    flex-direction: column;
+    align-items: center;
+}
 
+#postUsuario {
+    background-color: #ffff;
+    border-radius: 2% 2% 2% 2%;
+    height: 300px;
+    width: 700px;
+    text-align: center;
+    filter: drop-shadow(5px 5px 4px #000);
+}
 
+#btnPost {
+    display: flex;
+    flex-direction: column;
+    font-family: arial;
+    padding: 10px;
+    height: 45px;
+    width: 220px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 20px;
+    margin-top: 40px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: #f2893c;
+    color: #d8f1eb;
+    font-style: bold;
+    text-align: center;
+}
 
+/*view post*/
+
+.post-user {
+    background-color: #ffff;
+    border-radius: 2% 2% 2% 2%;
+    height: 300px;
+    width: 700px;
+    text-align: center;
+    filter: drop-shadow(5px 5px 4px #000);
+ 
+}
+
+#btnEliminar{
+
+    display: flex;
+    font-family: arial;
+    padding: 10px;
+    height: 45px;
+    width: 95px;
+    border-radius: 20px;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: #f2893c;
+    color: #d8f1eb;
+    text-align: justify;
+
+}
