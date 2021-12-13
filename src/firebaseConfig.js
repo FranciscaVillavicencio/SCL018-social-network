@@ -78,7 +78,7 @@ export const loginOut = () => {
 
   /*const auth = getAuth();*/
   signOut(auth).then(() => {
-    window.location.hash = "#/beginning";
+    window.location.hash = "";
     // Sign-out successful.
   }).catch((error) => {
     // An error happened.
@@ -86,7 +86,7 @@ export const loginOut = () => {
 
 };
 
-// funcion para postear// 
+// funcion para generar la base de datos en firebase// 
 
 export const postMuro = async (posting, user) => {
   const docRef = await addDoc(collection(db, "publicaciones"), {
