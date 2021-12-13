@@ -10,7 +10,7 @@ import {
   
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; //de deben importar desde firebase todas las funciones correspondientes segun lo que queramos hacer. 
 
-import { getFirestore, Timestamp, collection, addDoc, onSnapshot, query, orderBy, /* onSnapshot, query, */ } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
+import { getFirestore, Timestamp, collection, addDoc, onSnapshot, query, orderBy, deleteDoc, doc, /* onSnapshot, query, */ } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 
 
 
@@ -173,6 +173,15 @@ export const loginOut = () => {
   });
   }; */
 
+
+
+/*función para eliminar*/
+
+export const deletePost = async (id) => {
+  
+ await deleteDoc(doc(db, 'publicaciones', id));
+  
+};
 
 
 
