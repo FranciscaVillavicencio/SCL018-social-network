@@ -47,6 +47,7 @@ export const home = () => {
 
      //Crear tu post//
     const post = (publicaciones) => {
+        divHome.querySelector("#publicaciones").innerHTML="";
         publicaciones.forEach((element) => {
             divHome.querySelector("#publicaciones").innerHTML += `
 
@@ -56,11 +57,9 @@ export const home = () => {
             <img class = "photo-user" id = "photoUser" src = ${element.foto}>
             <h1 class = "user-name" id = "userName">${element.username}</h1>
             </div>
-            <div class = "elements-post">
             <textarea class = "post-User" id = "postUser"> ${element.post}</textarea>
             </div>
             <img src = "resources/images/delete.png" alt = "ícono de basurero blanco" class = "btn-delete" id = "btnDelete">
-            </div>
             </section>
             `;
 
