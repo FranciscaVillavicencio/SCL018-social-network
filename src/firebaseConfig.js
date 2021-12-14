@@ -7,12 +7,19 @@ import {
   signOut,
   GoogleAuthProvider,
   signInWithPopup,
-  
-} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; //de deben importar desde firebase todas las funciones correspondientes segun lo que queramos hacer. 
+} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; //de deben importar desde firebase todas las funciones correspondientes segun lo que queramos hacer.
 
-import { getFirestore, Timestamp, collection, addDoc, onSnapshot, query, orderBy, deleteDoc, doc, /* onSnapshot, query, */ } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
-
-
+import {
+  getFirestore,
+  Timestamp,
+  collection,
+  addDoc,
+  onSnapshot,
+  query,
+  orderBy,
+  deleteDoc,
+  doc,
+} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -29,16 +36,16 @@ const firebaseConfig = {
   measurementId: "G-253TQ7184W",
 };
 
-// Initialize Firebase
+// Initialize Firebase//
+
 export const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+// Función para crear usuario con email y contraseña//
 
-
-// función para crear usuario con mail y contraseña//
 export const signUp = (email, password) => {
-  //funcion para el registro de usuarios
+  // Función para el registro de usuarios
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
@@ -53,14 +60,16 @@ export const signUp = (email, password) => {
     });
 };
 
-// función para el login de usuarios//
+// Función para el login de usuarios//
 
 export const loginUsuario = (email, password) => {
-  signInWithEmailAndPassword(auth, email, password) //funcion exportada de firebase, la cual se debe agregar dentro de una constante//
+  signInWithEmailAndPassword(auth, email, password)
+    // Función exportada de firebase, la cual se debe agregar dentro de una constante//
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      window.location.hash = "#/home"; //con este codigo se hace el cambio de hash al home//
+      window.location.hash = "#/home";
+      //Con este código se hace el cambio de hash al home//
 
       // ...
     })
@@ -68,85 +77,81 @@ export const loginUsuario = (email, password) => {
       const errorCode = error.code;
       const errorMessage = error.message;
     });
-
 };
 
 // Función para autenticar con Google//
 
 export const signInGoogle = () => {
-const provider = new GoogleAuthProvider(app);
-const auth = getAuth();
-signInWithPopup(auth, provider)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    // The signed-in user info.
-    const user = result.user;
-    window.location.hash = "#/home";
-    return user;
-    // ...
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
-  });
-}
-
-// cierre de sesión//
-
-//funcion "contenedora"// ¿poque va sin parametros??//
-export const loginOut = () => {
-
-  /*const auth = getAuth();*/
-  signOut(auth).then(() => {
-    window.location.hash = "";
-    // Sign-out successful.
-  }).catch((error) => {
-    // An error happened.
-  });
-
+  const provider = new GoogleAuthProvider(app);
+  const auth = getAuth();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      window.location.hash = "#/home";
+      return user;
+      // ...
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
 };
 
-// funcion para generar la base de datos en firebase// 
+// Cierre de sesión//
 
-/*   export const postMuro = async (posting, user) => {
+// Función "contenedora"//
+export const loginOut = () => {
+  /*const auth = getAuth();*/
+  signOut(auth)
+    .then(() => {
+      window.location.hash = "";
+      // Sign-out successful.
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+};
+
+// Funcioó para generar la base de datos en firebase//
+
+export const postMuro = async (input) => {
+  const user = auth.currentUser;
   const docRef = await addDoc(collection(db, "publicaciones"), {
-    post: posting,
-    correo: user,
+    username: auth.currentUser.displayName,
+    userId: auth.currentUser.uid,
+    post: input,
+    correo: user.email,
+    foto: user.photoURL,
+    datePosted: Timestamp.fromDate(new Date()),
   });
-  console.log("Document written with ID: ", docRef.id); */
-/ */
-  export const postMuro = async (input) => {
-    const user = auth.currentUser;
-    const docRef = await addDoc(collection(db, 'publicaciones'), {
-      username: auth.currentUser.displayName,
-      userId: auth.currentUser.uid,
-      post: input,
-      correo: user.email,
-      foto: user.photoURL,
-      datePosted: Timestamp.fromDate(new Date()),
-    });
-    return docRef;
-  } 
+  return docRef;
+};
 
-  export const readData = (callback) => {
-    const q = query(collection(db, "publicaciones") ,orderBy('datePosted', 'desc'));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const posts = [];
-      querySnapshot.forEach((_doc) => {
-        posts.push({ ..._doc.data(), id: _doc.id });
-      });
-      callback(posts);
+export const readData = (callback) => {
+  const q = query(
+    collection(db, "publicaciones"),
+    orderBy("datePosted", "desc")
+  );
+  const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    const posts = [];
+    querySnapshot.forEach((_doc) => {
+      posts.push({ ..._doc.data(), id: _doc.id });
     });
-  };
-  
-  /* export const readData = async () => {
+    callback(posts);
+  });
+};
+
+/* export const readData = async () => {
     const q = await getDocs(collection(db, 'publicaciones'));
     const posts = [];
     q.forEach((element) => {
@@ -157,7 +162,7 @@ export const loginOut = () => {
     });
     return posts;
   } */
-  
+
 /*   // Función para leer data//
   export const readData = (callback) => {
     const q = query(collection(db, "publicaciones"));
@@ -173,46 +178,8 @@ export const loginOut = () => {
   });
   }; */
 
-
-
-/*función para eliminar*/
+// Fnción para eliminar//
 
 export const deletePost = async (id) => {
-  
- await deleteDoc(doc(db, 'publicaciones', id));
-  
+  await deleteDoc(doc(db, "publicaciones", id));
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
