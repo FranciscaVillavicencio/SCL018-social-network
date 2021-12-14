@@ -9,6 +9,7 @@ body {
     padding: 0;
 }
 
+
 /* Containers*/
 
 .view-container {
@@ -33,11 +34,6 @@ body {
     grid-column: 4/6;
     grid-row: 1/6;
     justify-content: left;
-}
-
-header {
-    display: flex;
-    width: 100%;
 }
 
 .fire-logo {
@@ -83,6 +79,7 @@ header {
     margin-left: 20px;
     margin-top: 190px;
     padding: 10px;
+    position: relative;
     text-align: center;
     width: 220px;
 }
@@ -499,3 +496,97 @@ header {
 
 
 
+/* @media screen and (min-width: 320px)and (max-width:667px) {
+    /*tamaño pantalla
+
+    .view-container {
+        display: none;
+    }
+
+    .images-container {
+        display: none;
+    }
+
+    /*     .fire-logo {
+        height: 47px;
+        margin-top: 5%;
+        margin-left: 50%;
+        width: 37px;
+    }
+
+    .propagar-img {
+        filter: drop-shadow(5px 5px 4px #000);
+        height: 24px;
+        margin-top: 2%;
+        margin-left: 13%;
+        width: 160px;
+    }
+
+    .title {
+        display: none;
+    }
+   
+    .beginning-container {
+        
+        width: 1000vw;
+     
+        
+        left: 0;
+        top:0;     
+    } */
+
+/* ------------------mobile --------------------*/
+@media screen and (min-width: 320px) and (max-width: 488px) {
+
+    .view-container {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: #003933;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: 20% 20% 20% 20% 20%;
+    }
+
+    .beginning-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background: #003933;
+        margin-top:50%;
+    }
+
+    .subcontainer {
+        display: none;
+    }
+
+    /*-----------Inicio y registro-------------*/
+    .images-container,
+    .title-container {
+        display: none;
+    }
+
+
+    #login {
+        margin-top: 0%;
+        margin-left: 0px;
+        height: 50px;
+        width: 210px;
+        font-size: 20px;
+        
+    }
+
+    #register {
+        margin-top: 0%;
+        margin-left: 0px;
+        height: 50px;
+        width: 210px;
+        font-size: 20px;
+    }
+
+    .hr-beginning-center {
+        margin-top: 10px;
+        margin-left: 15px;
+        width: 160px;
+    }
