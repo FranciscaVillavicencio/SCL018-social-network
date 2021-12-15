@@ -5,7 +5,8 @@ export const beginning = () => {
   divBeginning.className = "view-container";
   const viewBeginning = `
 
-    <header>
+
+    <section class = "subcontainer">
     <div class = "images-container">
     <img class = "fire-logo" src = "resources/images/fireLogo.png" alt = "logo de fuego con carita blanca y sonriente">
     <img class = "propagar-img" src = "resources/images/propagar.png" alt = "logo del nombre de la página web, propagar en mayúscula y degradado de naranjos y
@@ -13,7 +14,8 @@ export const beginning = () => {
     <div class = "title-container">
     <h1 class = "title">Espacio para la difusión de talleres, charlas y conversatorios.</h1>
     </div>
-    </header>
+    </section>
+    
     <div class = "beginning-container">
     <button class = "btn-login" id = "login">INICIAR SESIÓN</button>
     <button class = "btn-register" id = "register">REGÍSTRATE</button>
