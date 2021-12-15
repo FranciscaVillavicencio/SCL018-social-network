@@ -113,6 +113,7 @@ export const signInGoogle = () => {
 
 // Cierre de sesión//
 
+// Función "contenedora"//
 export const loginOut = () => {
   /*const auth = getAuth();*/
   signOut(auth)
@@ -124,22 +125,6 @@ export const loginOut = () => {
       // An error happened.
     });
 };
-
-
-
-//funcion Observador// 
-
-export const observer = () => {
-  onAuthStateChanged(auth, (user) => {
-   if (user) {
-     const uid = user.uid;
-     // ...
-   } else if (window.location.hash === "#/home") {
-     loginOut(); 
-     }  
-});
-};
-
 
 
 // Funcioó para generar la base de datos en firebase//
@@ -206,6 +191,19 @@ export const deletePost = async (id) => {
 
 
 
+//funcion Observador// 
+
+export const observer = () => {
+   onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+      // ...
+    } else if (window.location.hash === "#/home") {
+
+      loginOut(); 
+      }  
+});
+};
 
 
 

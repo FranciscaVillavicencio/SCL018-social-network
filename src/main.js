@@ -1,6 +1,6 @@
 
 import { observer } from '../firebaseConfig.js';
-import {routes} from './view/router.js';
+import {routes} from'./view/router.js';
 
 
 window.addEventListener("load", () =>{

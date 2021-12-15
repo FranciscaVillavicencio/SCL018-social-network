@@ -84,14 +84,14 @@ export const home = () => {
   readData(post);
 
   //boton para  eliminar//
-  /*const postDelete = divHome.querySelector("#btnDelete");
+  const postDelete = divHome.querySelector("#btnDelete");
 postDelete.addEventListener("click", () => {
 const postDelete = divHome.querySelector("#postUser").value;
 
 deletePost(postDelete);
 
 });
-};*/
+
 
   //boton para cerrar sesión//
   const loginOut = divHome
