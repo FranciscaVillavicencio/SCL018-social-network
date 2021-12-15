@@ -7,7 +7,11 @@ import {
   signOut,
   GoogleAuthProvider,
   signInWithPopup,
+  onAuthStateChanged, //funcion exportada para "anclar" el observador//
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; //de deben importar desde firebase todas las funciones correspondientes segun lo que queramos hacer.
+
+
+
 
 import {
   getFirestore,
@@ -109,7 +113,6 @@ export const signInGoogle = () => {
 
 // Cierre de sesión//
 
-// Función "contenedora"//
 export const loginOut = () => {
   /*const auth = getAuth();*/
   signOut(auth)
@@ -121,6 +124,23 @@ export const loginOut = () => {
       // An error happened.
     });
 };
+
+
+
+//funcion Observador// 
+
+export const observer = () => {
+  onAuthStateChanged(auth, (user) => {
+   if (user) {
+     const uid = user.uid;
+     // ...
+   } else if (window.location.hash === "#/home") {
+     loginOut(); 
+     }  
+});
+};
+
+
 
 // Funcioó para generar la base de datos en firebase//
 
@@ -178,8 +198,17 @@ export const readData = (callback) => {
   });
   }; */
 
-// Fnción para eliminar//
+// Función para eliminar//
 
 export const deletePost = async (id) => {
   await deleteDoc(doc(db, "publicaciones", id));
 };
+
+
+
+
+
+
+
+ 
+  
