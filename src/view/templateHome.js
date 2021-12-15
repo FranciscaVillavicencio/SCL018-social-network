@@ -55,7 +55,7 @@ export const home = () => {
             <section class = "post-container"> 
             <div class = "content">
             <div class = "elements-user">
-            <img class = "photo-user" id = "photoUser" src = ${element.foto}>
+            <img class = "photo-user" referrerpolicy="no-referrer" id = "photoUser" src = ${element.foto}>
             <h1 class = "user-name" id = "userName">${element.username}</h1>
             </div>
             <textarea class = "post-User" id = "postUser"> ${element.post}</textarea>
@@ -94,11 +94,11 @@ deletePost(postDelete);
 };*/
 
   //boton para cerrar sesión//
-  const loginOut = divHome
-    .querySelector("#logOut")
-    .addEventListener("click", () => {
-      window.location.hash = "";
-    });
+  divHome.querySelector("#logOut").addEventListener("click", () => {
+    loginOut() 
+    window.location.hash = "#/login";
+  });
+
 
   return divHome;
 };

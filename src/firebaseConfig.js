@@ -7,6 +7,9 @@ import {
   signOut,
   GoogleAuthProvider,
   signInWithPopup,
+  onAuthStateChanged,
+  setPersistence, 
+  browserSessionPersistence,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; //de deben importar desde firebase todas las funciones correspondientes segun lo que queramos hacer.
 
 import {
@@ -178,8 +181,37 @@ export const readData = (callback) => {
   });
   }; */
 
-// Fnción para eliminar//
+// Función para eliminar//
 
 export const deletePost = async (id) => {
   await deleteDoc(doc(db, "publicaciones", id));
 };
+
+//observador
+export const observer = () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+    } else if ( window.location.hash === '#/home') {
+      loginOut();
+    //Si es usuarix le diriges a home
+    }{
+    }
+  });
+};
+
+setPersistence(auth, browserSessionPersistence)
+  .then(() => {
+    // Existing and future Auth states are now persisted in the current
+    // session only. Closing the window would clear any existing state even
+    // if a user forgets to sign out.
+    // ...
+    // New sign-in will be persisted with session persistence.
+    return signInWithEmailAndPassword(auth, email, password);
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+
