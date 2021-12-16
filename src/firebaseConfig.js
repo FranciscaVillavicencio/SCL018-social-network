@@ -127,7 +127,7 @@ export const loginOut = () => {
 };
 
 
-// Funcioó para generar la base de datos en firebase//
+// Función para generar la base de datos en firebase//
 
 export const postMuro = async (input) => {
   const user = auth.currentUser;
@@ -193,7 +193,7 @@ export const deletePost = async (id) => {
 
 //funcion Observador// 
 
-export const observer = () => {
+/*export const observer = () => {
    onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
@@ -203,9 +203,22 @@ export const observer = () => {
       loginOut(); 
       }  
 });
+};*/
+
+export const observer = () => {
+  onAuthStateChanged(auth, (user) => {
+ if (user) {
+     const uid = user.uid;
+    
+ } else if ( window.location.hash === '#/home') {
+      loginOut();
+     
+  } else if(!user){
+    window.location.hash === "#/login";
+    alert('Tienes que Registrarte');
+  }
+  });
 };
-
-
 
 
  
