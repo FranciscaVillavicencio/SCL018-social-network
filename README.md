@@ -7,28 +7,27 @@ charlas y conversatorios. Por lo tanto, nuestro proyecto consiste en que puedan 
 la cuenta creada y con Google, además de realizar y eliminar las publicaciones con la información necesaria. 
 Propagar es un espacio para difundir de manera más segura, sin la restricción que generan algunas redes sociales
 cuando se publican remuneraciones. Es un enfoque para quienes habitan las autogestiones como sobrevivencia en una sociedad
-capitalista, permitiendo que cada usuarie pueda describir cómo quiere ser remunerade. 
+capitalista, permitiendo que cada usuarie pueda describir cómo quiere ser remunerade.</p></li>
 
-<img src="/src/resources/images/project.jpg" alt="Página web final. Fondo verde agua, pantalla dividida. Primera pantalla: Logo de fuego, 
+<li><p><img src="/src/resources/images/Beginning.png" alt="Página web final. Fondo verde agua, pantalla dividida. Primera pantalla: Logo de fuego, 
 el título Propagar con forma de fuego cada letra y un texto que dice 'Espacio para la difusión de talleres, charlas y conversatorios.'
-Segunda pantalla: Fondo verde oscuro con las opciones de iniciar sesión, registrarse y acceder con Google" title="Página web"/>
+Segunda pantalla: Fondo verde oscuro con las opciones de iniciar sesión, registrarse y acceder con Google" title="Página web"/><p></li>
 
-<img src="/src/resources/images/Vista General.png" alt="Página web segunda vista. Header gris con el logo de fuego y el título Propagar al 
+<li><p><img src="/src/resources/images/Vista General.png" alt="Página web segunda vista. Header gris con el logo de fuego y el título Propagar al 
 lado izquierdo. Imagen de una puerta representando la salida al lado derecho. Fondo verde agua. Dos secciones hacia abajo. Primer rectángulo
 blanco para escribir la publicación con placeholder: 'Escribe tu post aquí'. Bajo esto un botón narajo con la palabra Publicar en blannco.
 Segundo rectángulo con las publicaciones realizadas, más un rectángulo naranajo con foto de la usuario y su nombre." title="Vista general"/></p></li>
 
-
 <li><p>INVESTIGACIÓN UX:</p>
 <p>Nuestra investigación UX comenzó con la elaboración de una encuesta a través de la herramienta Formularios de Google. 
 Esta encuesta fue respondida por 13 personas y se concretó la temática del proyecto, permitiendo el proceso de creación enfocándolo
-en una red social de difusión de talleres, charlas y conversatorios.
+en una red social de difusión de talleres, charlas y conversatorios.</p>
 
-<img src="/src/resources/images/encuesta-seleccion de tema.png" alt="Encuesta realizada en formularios Google. Dos rectangulares blancos.
+<img src="/src/resources/images/encuesta-tema.png" alt="Encuesta realizada en formularios Google. Dos rectangulares blancos.
 Primero: Información de 13 respuestas. Segundo: Información de qué cosas quisieran trocar. Círculo con opciones y porcentajes.
 Dando como resultado la opción Talleres, charlas y conversatorios con un 69,2%" title="Encuesta de elección de tema"/>
 
-<img src="/src/resources/images/encuesta-seleccion de tema 2.png" alt="Encuesta realizada en formularios Google. Dos rectangulares blancos. 
+<img src="/src/resources/images/encuesta-tema2.png" alt="Encuesta realizada en formularios Google. Dos rectangulares blancos. 
 Primero: Información de qué cosas quisieran trocar. Círculo con opciones y porcentajes. Dando como resultado la opción Talleres, charlas y conversatorios con un 69,2%. Segundo: Información sobre qué áreas te interesaria" title="Encuesta de elección de tema."/></p></li>
 </ol>
 
@@ -65,5 +64,5 @@ de usuaries:</p>
 4.- El código se ha subido al repositorio main de la forkeadora.</p></li>
 
 <p> ASPECTOS ADICIONALES:</p>
-<p>En futuras actualizaciones, la página web se podrán editar las publicaciones, dar like, agregar imágenes de los afiches, un perfild e usarie,
-filtros por temática y ser responsive para celular</p>
+<p>En futuras actualizaciones, la página web se podrán editar las publicaciones, dar like, agregar imágenes de los afiches, 
+un perfil de usarie, filtros por temática y ser responsive para celular.</p>
