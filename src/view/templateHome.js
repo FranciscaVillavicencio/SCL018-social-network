@@ -29,19 +29,20 @@ export const home = () => {
     </section>
     `;
 
-  //boton para "postear" + la funcion de firestore//
+  // Botón para "postear" + la función de Firestore 
+  
   divHome.innerHTML = viewHome;
 
   const posteo = divHome.querySelector("#btnPost");
   posteo.addEventListener("click", () => {
-    /*  const user = divHome.querySelector("#nameUsuario").value; */
     const posting = divHome.querySelector("#postUsuario").value;
 
     console.log(posting);
     postMuro(posting);
   });
 
-  //Crear tu post//
+  //Crear tu post
+
   const post = (publicaciones) => {
     divHome.querySelector("#publicaciones").innerHTML = "";
     publicaciones.forEach((element) => {
@@ -78,14 +79,15 @@ export const home = () => {
   readData(post);
 
 
-  //boton para cerrar sesión//
+  // Botón para cerrar sesión
+
   divHome.querySelector('#logOut').addEventListener('click', () => {
-    loginOut() 
+    loginOut()
     window.location.hash = '#/login';
   });
 
 
-return divHome;
+  return divHome;
 
 };
 

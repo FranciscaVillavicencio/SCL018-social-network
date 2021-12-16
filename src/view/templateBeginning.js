@@ -22,7 +22,7 @@ export const beginning = () => {
     <div class = "subtitle-container">
     <h2 class = "subtitle">Accede con</h2>
 
-    <img class = "google-logo" id = "google" src = "resources/images/google.png" alt = "logo de Google">
+    <img class = "google-logo" id = "google" src = "resources/images/google.png" alt = "logo anaranjado de una letra G mayúscula">
     </div>
   
     `;
