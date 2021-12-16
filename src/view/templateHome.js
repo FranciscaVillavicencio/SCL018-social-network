@@ -77,15 +77,6 @@ export const home = () => {
   };
   readData(post);
 
-  //boton para  eliminar//
-  /*const postDelete = divHome.querySelector("#btnDelete");
-  console.log(postDelete);
-  postDelete.addEventListener("click", () => {
-    const postDelete = divHome.querySelector("#postUser").value;
-    
-
-    deletePost(postDelete);
-  });*/
 
   //boton para cerrar sesión//
   divHome.querySelector("#logOut").addEventListener("click", () => {
