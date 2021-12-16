@@ -8,10 +8,9 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   onAuthStateChanged,
-  setPersistence, 
+  setPersistence,
   browserSessionPersistence,
-} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; //de deben importar desde firebase todas las funciones correspondientes segun lo que queramos hacer.
-
+} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
 
 import {
   getFirestore,
@@ -68,12 +67,10 @@ export const signUp = (email, password) => {
 
 export const loginUsuario = (email, password) => {
   signInWithEmailAndPassword(auth, email, password)
-    // Función exportada de firebase, la cual se debe agregar dentro de una constante//
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
       window.location.hash = "#/home";
-      //Con este código se hace el cambio de hash al home//
 
       // ...
     })
@@ -113,7 +110,6 @@ export const signInGoogle = () => {
 
 // Cierre de sesión//
 
-// Función "contenedora"//
 export const loginOut = () => {
   /*const auth = getAuth();*/
   signOut(auth)
@@ -125,7 +121,6 @@ export const loginOut = () => {
       // An error happened.
     });
 };
-
 
 // Función para generar la base de datos en firebase//
 
@@ -150,12 +145,11 @@ export const readData = (callback) => {
   const unsubscribe = onSnapshot(q, (querySnapshot) => {
     const posts = [];
     querySnapshot.forEach((_doc) => {
-      posts.push({ ..._doc.data(), id: _doc.id }); 
+      posts.push({ ..._doc.data(), id: _doc.id });
     });
     callback(posts);
   });
 };
-
 
 // Función para eliminar//
 
@@ -168,10 +162,11 @@ export const observer = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
-    } else if ( window.location.hash === '#/home') {
+    } else if (window.location.hash === "#/home") {
       loginOut();
-    //Si es usuarix le diriges a home
-    }{
+      //Si es usuarix le diriges a home
+    }
+    {
     }
   });
 };
@@ -190,4 +185,3 @@ setPersistence(auth, browserSessionPersistence)
     const errorCode = error.code;
     const errorMessage = error.message;
   });
-

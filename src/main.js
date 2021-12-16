@@ -6,10 +6,7 @@ window.addEventListener("load", () => {
   observer();
 });
 
-
 window.addEventListener("hashchange", () => {
   routes(window.location.hash);
   observer();
 });
-
-

@@ -1,9 +1,9 @@
 import { signUp } from "../firebaseConfig.js";
 
 export const register = () => {
-    const divRegister = document.createElement("div");
-    divRegister.className = "view-container";
-    const viewRegister = `
+  const divRegister = document.createElement("div");
+  divRegister.className = "view-container";
+  const viewRegister = `
 
     <header>
     <div class = "images-container">
@@ -23,22 +23,22 @@ export const register = () => {
 
     `;
 
-    divRegister.innerHTML = viewRegister;
+  divRegister.innerHTML = viewRegister;
 
-    const buttonRegister = divRegister.querySelector("#btnRegister");
-    buttonRegister.addEventListener("click", () => {
-        const email = divRegister.querySelector("#emailRegister").value;
-        const password = divRegister.querySelector("#passwordRegister").value;
-        window.location.hash = "#/login";
-        console.log(email);
-        console.log(password);
+  const buttonRegister = divRegister.querySelector("#btnRegister");
+  buttonRegister.addEventListener("click", () => {
+    const email = divRegister.querySelector("#emailRegister").value;
+    const password = divRegister.querySelector("#passwordRegister").value;
+    window.location.hash = "#/login";
+    console.log(email);
+    console.log(password);
 
-        if (password.lenght < 6) {
-            alert("tu constraseña es muy corta");
-        } else {
-            signUp(email, password);
-        }
-    });
+    if (password.lenght < 6) {
+      alert("tu constraseña es muy corta");
+    } else {
+      signUp(email, password);
+    }
+  });
 
-    return divRegister;
+  return divRegister;
 };

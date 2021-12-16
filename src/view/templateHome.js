@@ -29,7 +29,7 @@ export const home = () => {
     </section>
     `;
 
-  //boton para "postear" + la funcion de firestore//
+  //boton para "postear" + la funcion de firestore
   divHome.innerHTML = viewHome;
 
   const posteo = divHome.querySelector("#btnPost");
@@ -77,15 +77,12 @@ export const home = () => {
   };
   readData(post);
 
+  //boton para cerrar sesión
 
-  //boton para cerrar sesión//
   divHome.querySelector("#logOut").addEventListener("click", () => {
-    loginOut() 
+    loginOut();
     window.location.hash = "#/login";
   });
 
-
-return divHome;
-
+  return divHome;
 };
-
