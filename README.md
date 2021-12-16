@@ -55,12 +55,12 @@ se concluyó gracias al test de usabilidad que quienes son nuestres usuaries ser
 
 <p>DEFINICIÓN DE TERMINADO:</p>
 <p>Definimos los siguientes criterios para considerar terminado el trabajo relativo a nuestras historias
-de usuaries:</p>
+de usuaries:
 
-<p>1.- Se programó de forma similar a lo diseñado en nuestro prototipo de alta fidelidad.
-2.- Se trabajó en modalidad pair programming y se hizo code review al menos una vez.
-3.- Se han incorporado las sugerencias indicadas por las personas que participaron en los tests de usabilidad.
-4.- El código se ha subido al repositorio main de la forkeadora.</p>
+- Se programó de forma similar a lo diseñado en nuestro prototipo de alta fidelidad.
+- Se trabajó en modalidad pair programming y se hizo code review al menos una vez.
+- Se han incorporado las sugerencias indicadas por las personas que participaron en los tests de usabilidad.
+- El código se ha subido al repositorio main de la forkeadora.</p>
 
 <p> ASPECTOS ADICIONALES:</p>
 <p>En futuras actualizaciones, la página web se podrán editar las publicaciones, dar like, agregar imágenes de los afiches, 
