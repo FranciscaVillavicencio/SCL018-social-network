@@ -1,12 +1,11 @@
 import { beginning } from "./templateBeginning.js";
 import { login } from "./templateLogin.js";
 import { register } from "./templateRegister.js";
-import { home } from "./templateHome.js"; //ruta para llevar al Home
+import { home } from "./templateHome.js"; 
 
 export const routes = (hash) => {
   const menuBeginning = document.getElementById("root");
   menuBeginning.innerHTML = "";
-
 
   if (hash === "#/" || hash === "/" || hash === "#" || hash === "") {
     menuBeginning.appendChild(beginning());

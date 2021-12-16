@@ -20,14 +20,14 @@ export const beginning = () => {
     </div>
     <hr class = "hr-beginning-center"/>
     <div class = "subtitle-container">
-    <h2 class = "subtitle">Accede con</h1>
+    <h2 class = "subtitle">Accede con</h2>
+
     <img class = "google-logo" id = "google" src = "resources/images/google.png" alt = "logo de Google">
     </div>
   
     `;
 
   divBeginning.innerHTML = viewBeginning;
-  //window.location.hash//
   divBeginning.querySelector("#login").addEventListener("click", () => {
     window.location.hash = "#/login";
   });

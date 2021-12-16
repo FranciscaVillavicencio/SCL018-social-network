@@ -27,8 +27,6 @@ export const home = () => {
     <div id = "publicaciones">
     </div>
     </section>
-
-
     `;
 
   //boton para "postear" + la funcion de firestore//
@@ -42,8 +40,6 @@ export const home = () => {
     console.log(posting);
     postMuro(posting);
   });
-
-
 
   //Crear tu post//
   const post = (publicaciones) => {
@@ -74,24 +70,13 @@ export const home = () => {
           const confirm = window.confirm("¿Quieres eliminar esta publicación?");
           if (confirm) {
             deletePost(id);
-
           }
         });
       });
     });
-
   };
   readData(post);
 
-  //boton para  eliminar//
-  /*const postDelete = divHome.querySelector("#btnDelete");
-postDelete.addEventListener("click", () => {
-const postDelete = divHome.querySelector("#postUser").value;
-
-deletePost(postDelete);
-
-});
-};*/
 
   //boton para cerrar sesión//
   divHome.querySelector('#logOut').addEventListener('click', () => {
@@ -100,5 +85,7 @@ deletePost(postDelete);
   });
 
 
-  return divHome;
+return divHome;
+
 };
+

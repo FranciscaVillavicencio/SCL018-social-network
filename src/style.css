@@ -9,7 +9,6 @@ body {
     padding: 0;
 }
 
-
 /* Containers*/
 
 .view-container {
@@ -34,6 +33,11 @@ body {
     grid-column: 4/6;
     grid-row: 1/6;
     justify-content: left;
+}
+
+header {
+    display: flex;
+    width: 100%;
 }
 
 .fire-logo {
@@ -79,7 +83,6 @@ body {
     margin-left: 20px;
     margin-top: 190px;
     padding: 10px;
-    position: relative;
     text-align: center;
     width: 220px;
 }
@@ -137,7 +140,7 @@ body {
     filter: drop-shadow(5px 5px 4px #000);
     height: 80px;
     margin: 10% 0% 0% 5%;
-    margin-left: 580px;
+    margin-left: 550px;
     width: 80px;
 }
 
