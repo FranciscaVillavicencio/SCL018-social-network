@@ -12,6 +12,7 @@ import {
   browserSessionPersistence,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; //de deben importar desde firebase todas las funciones correspondientes segun lo que queramos hacer.
 
+
 import {
   getFirestore,
   Timestamp,
@@ -125,7 +126,8 @@ export const loginOut = () => {
     });
 };
 
-// Funcioó para generar la base de datos en firebase//
+
+// Función para generar la base de datos en firebase//
 
 export const postMuro = async (input) => {
   const user = auth.currentUser;
@@ -148,38 +150,12 @@ export const readData = (callback) => {
   const unsubscribe = onSnapshot(q, (querySnapshot) => {
     const posts = [];
     querySnapshot.forEach((_doc) => {
-      posts.push({ ..._doc.data(), id: _doc.id });
+      posts.push({ ..._doc.data(), id: _doc.id }); 
     });
     callback(posts);
   });
 };
 
-/* export const readData = async () => {
-    const q = await getDocs(collection(db, 'publicaciones'));
-    const posts = [];
-    q.forEach((element) => {
-      posts.push({
-        id: element.id,//accder id del documento
-        ...element.data(),//acceder id del usuario
-      });
-    });
-    return posts;
-  } */
-
-/*   // Función para leer data//
-  export const readData = (callback) => {
-    const q = query(collection(db, "publicaciones"));
-    onSnapshot(q, (querySnapshot) => {
-  const postData = [];
-  querySnapshot.forEach((element) => {
-      postData.push({
-        id: element.id, //Se accede al id del documento
-        ...element.data(), //Se accede al id del usuario
-      });
-    });
-    callback(postData);
-  });
-  }; */
 
 // Función para eliminar//
 
