@@ -94,9 +94,9 @@ deletePost(postDelete);
 };*/
 
   //boton para cerrar sesión//
-  divHome.querySelector("#logOut").addEventListener("click", () => {
+  divHome.querySelector('#logOut').addEventListener('click', () => {
     loginOut() 
-    window.location.hash = "#/login";
+    window.location.hash = '#/login';
   });
 
 
