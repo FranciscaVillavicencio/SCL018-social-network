@@ -10,7 +10,13 @@ import {
   onAuthStateChanged,
   setPersistence,
   browserSessionPersistence,
+<<<<<<< HEAD
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
+=======
+} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; 
+// De deben importar desde firebase todas las funciones correspondientes según lo que queramos hacer.
+
+>>>>>>> 132de9b4d4f64cc8c9d55e9c833d481fc7d4ef3e
 
 import {
   getFirestore,
@@ -24,11 +30,6 @@ import {
   doc,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBI030rPWIqiX27FZjdhta4-ZCIQuAY0tU",
   authDomain: "propagar-scl018-social-network.firebaseapp.com",
@@ -39,22 +40,20 @@ const firebaseConfig = {
   measurementId: "G-253TQ7184W",
 };
 
-// Initialize Firebase//
+// Initialize Firebase
 
 export const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Función para crear usuario con email y contraseña//
+// Función para crear usuario con email y contraseña
 
 export const signUp = (email, password) => {
   // Función para el registro de usuarios
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in
       const user = userCredential.user;
       window.location.hash = "#/login";
-      // ...
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -63,16 +62,22 @@ export const signUp = (email, password) => {
     });
 };
 
-// Función para el login de usuarios//
+// Función para el login de usuarios
 
 export const loginUsuario = (email, password) => {
   signInWithEmailAndPassword(auth, email, password)
+<<<<<<< HEAD
+=======
+    // Función exportada de firebase, la cual se debe agregar dentro de una constante
+>>>>>>> 132de9b4d4f64cc8c9d55e9c833d481fc7d4ef3e
     .then((userCredential) => {
-      // Signed in
       const user = userCredential.user;
       window.location.hash = "#/home";
+<<<<<<< HEAD
 
       // ...
+=======
+>>>>>>> 132de9b4d4f64cc8c9d55e9c833d481fc7d4ef3e
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -80,49 +85,43 @@ export const loginUsuario = (email, password) => {
     });
 };
 
-// Función para autenticar con Google//
+// Función para autenticar con Google
 
 export const signInGoogle = () => {
   const provider = new GoogleAuthProvider(app);
   const auth = getAuth();
   signInWithPopup(auth, provider)
     .then((result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
-      // The signed-in user info.
       const user = result.user;
       window.location.hash = "#/home";
       return user;
-      // ...
     })
     .catch((error) => {
-      // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
-      // The email of the user's account used.
       const email = error.email;
-      // The AuthCredential type that was used.
       const credential = GoogleAuthProvider.credentialFromError(error);
-      // ...
     });
 };
 
-// Cierre de sesión//
+// Cierre de sesión
 
 export const loginOut = () => {
-  /*const auth = getAuth();*/
   signOut(auth)
     .then(() => {
       window.location.hash = "";
-      // Sign-out successful.
     })
     .catch((error) => {
-      // An error happened.
     });
 };
 
+<<<<<<< HEAD
 // Función para generar la base de datos en firebase//
+=======
+// Función para generar la base de datos en firebase
+>>>>>>> 132de9b4d4f64cc8c9d55e9c833d481fc7d4ef3e
 
 export const postMuro = async (input) => {
   const user = auth.currentUser;
@@ -151,13 +150,19 @@ export const readData = (callback) => {
   });
 };
 
+<<<<<<< HEAD
 // Función para eliminar//
+=======
+
+// Función para eliminar
+>>>>>>> 132de9b4d4f64cc8c9d55e9c833d481fc7d4ef3e
 
 export const deletePost = async (id) => {
   await deleteDoc(doc(db, "publicaciones", id));
 };
 
-//observador
+// Observador
+
 export const observer = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -171,6 +176,7 @@ export const observer = () => {
   });
 };
 
+<<<<<<< HEAD
 setPersistence(auth, browserSessionPersistence)
   .then(() => {
     // Existing and future Auth states are now persisted in the current
@@ -185,3 +191,6 @@ setPersistence(auth, browserSessionPersistence)
     const errorCode = error.code;
     const errorMessage = error.message;
   });
+=======
+
+>>>>>>> 132de9b4d4f64cc8c9d55e9c833d481fc7d4ef3e

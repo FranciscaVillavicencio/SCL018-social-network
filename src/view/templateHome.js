@@ -29,19 +29,24 @@ export const home = () => {
     </section>
     `;
 
+<<<<<<< HEAD
   //boton para "postear" + la funcion de firestore
+=======
+  // Botón para "postear" + la función de Firestore 
+  
+>>>>>>> 132de9b4d4f64cc8c9d55e9c833d481fc7d4ef3e
   divHome.innerHTML = viewHome;
 
   const posteo = divHome.querySelector("#btnPost");
   posteo.addEventListener("click", () => {
-    /*  const user = divHome.querySelector("#nameUsuario").value; */
     const posting = divHome.querySelector("#postUsuario").value;
 
     console.log(posting);
     postMuro(posting);
   });
 
-  //Crear tu post//
+  //Crear tu post
+
   const post = (publicaciones) => {
     divHome.querySelector("#publicaciones").innerHTML = "";
     publicaciones.forEach((element) => {
@@ -79,10 +84,23 @@ export const home = () => {
 
   //boton para cerrar sesión
 
+<<<<<<< HEAD
   divHome.querySelector("#logOut").addEventListener("click", () => {
     loginOut();
     window.location.hash = "#/login";
   });
 
   return divHome;
+=======
+  // Botón para cerrar sesión
+
+  divHome.querySelector('#logOut').addEventListener('click', () => {
+    loginOut()
+    window.location.hash = '#/login';
+  });
+
+
+  return divHome;
+
+>>>>>>> 132de9b4d4f64cc8c9d55e9c833d481fc7d4ef3e
 };
