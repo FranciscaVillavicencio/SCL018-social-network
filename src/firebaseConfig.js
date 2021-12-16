@@ -7,13 +7,9 @@ import {
   signOut,
   GoogleAuthProvider,
   signInWithPopup,
-<<<<<<< HEAD
-  onAuthStateChanged, //funcion exportada para "anclar" el observador//
-=======
   onAuthStateChanged,
   setPersistence, 
   browserSessionPersistence,
->>>>>>> 84404b8a53a06b2202924dde55ab80d7cd4febb0
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; //de deben importar desde firebase todas las funciones correspondientes segun lo que queramos hacer.
 
 
@@ -195,42 +191,6 @@ export const deletePost = async (id) => {
   await deleteDoc(doc(db, "publicaciones", id));
 };
 
-<<<<<<< HEAD
-
-
-//funcion Observador// 
-
-/*export const observer = () => {
-   onAuthStateChanged(auth, (user) => {
-    if (user) {
-      const uid = user.uid;
-      // ...
-    } else if (window.location.hash === "#/home") {
-
-      loginOut(); 
-      }  
-});
-};*/
-
-export const observer = () => {
-  onAuthStateChanged(auth, (user) => {
- if (user) {
-     const uid = user.uid;
-    
- } else if ( window.location.hash === '#/home') {
-      loginOut();
-     
-  } else if(!user){
-    window.location.hash === "#/login";
-    alert('Tienes que Registrarte');
-  }
-  });
-};
-
-
- 
-  
-=======
 //observador
 export const observer = () => {
   onAuthStateChanged(auth, (user) => {
@@ -259,4 +219,3 @@ setPersistence(auth, browserSessionPersistence)
     const errorMessage = error.message;
   });
 
->>>>>>> 84404b8a53a06b2202924dde55ab80d7cd4febb0

@@ -88,19 +88,11 @@ export const home = () => {
   });*/
 
   //boton para cerrar sesión//
-<<<<<<< HEAD
-      divHome.querySelector("#logOut").addEventListener("click", () => {
-      window.location.hash = "";
-      loginOut() 
-
-    });
-=======
   divHome.querySelector("#logOut").addEventListener("click", () => {
     loginOut() 
     window.location.hash = "#/login";
   });
 
->>>>>>> 84404b8a53a06b2202924dde55ab80d7cd4febb0
 
 return divHome;
 
