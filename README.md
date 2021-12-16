@@ -53,7 +53,6 @@ se concluyó gracias al test de usabilidad que quienes son nuestres usuaries ser
 - ELiminar el post.
 - Pueda cerrar sesión.</p>
 
-<ol>
 <p>DEFINICIÓN DE TERMINADO:</p>
 <p>Definimos los siguientes criterios para considerar terminado el trabajo relativo a nuestras historias
 de usuaries:</p>
