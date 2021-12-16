@@ -4,7 +4,11 @@ export const beginning = () => {
   const divBeginning = document.createElement("div");
   divBeginning.className = "view-container";
   const viewBeginning = `
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 84404b8a53a06b2202924dde55ab80d7cd4febb0
     <header>
     <div class = "images-container">
     <img class = "fire-logo" src = "resources/images/fireLogo.png" alt = "logo de fuego con carita blanca y sonriente">
@@ -14,7 +18,10 @@ export const beginning = () => {
     <h1 class = "title">Espacio para la difusión de talleres, charlas y conversatorios.</h1>
     </div>
     </header>
+<<<<<<< HEAD
     
+=======
+>>>>>>> 84404b8a53a06b2202924dde55ab80d7cd4febb0
     <div class = "beginning-container">
     <button class = "btn-login" id = "login">INICIAR SESIÓN</button>
     <button class = "btn-register" id = "register">REGÍSTRATE</button>

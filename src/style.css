@@ -12,10 +12,10 @@ body {
 /* Containers*/
 
 .view-container {
+    display: grid;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 20% 20% 20% 20% 20%;
     height: 100vh;
@@ -26,10 +26,10 @@ body {
 .beginning-container,
 .login-container,
 .register-container {
-    align-items: center;
-    background: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
     grid-column: 4/6;
     grid-row: 1/6;
     justify-content: left;
@@ -72,11 +72,11 @@ header {
 #login {
     display: flex;
     flex-direction: column;
-    font-family: arial;
     background-color: #d8f1eb;
     border-radius: 20px;
     box-shadow: 0px 4px 4px 0px #00000040;
     color: #4b6863;
+    font-family: arial;
     font-size: 25px;
     font-style: bold;
     height: 55px;
@@ -433,7 +433,7 @@ header {
     border: 3px solid #000000;
 }
 
-/* Media query*/
+/* /* Media query*/
 
 /* @media screen and (max-width:630px){
 
@@ -497,3 +497,102 @@ header {
 
  */
 
+<<<<<<< HEAD
+=======
+
+
+/* @media screen and (min-width: 320px)and (max-width:667px) {
+    /*tamaño pantalla
+
+    .view-container {
+        display: none;
+    }
+
+    .images-container {
+        display: none;
+    }
+
+    /*     .fire-logo {
+        height: 47px;
+        margin-top: 5%;
+        margin-left: 50%;
+        width: 37px;
+    }
+
+    .propagar-img {
+        filter: drop-shadow(5px 5px 4px #000);
+        height: 24px;
+        margin-top: 2%;
+        margin-left: 13%;
+        width: 160px;
+    }
+
+    .title {
+        display: none;
+    }
+   
+    .beginning-container {
+        
+        width: 1000vw;
+     
+        
+        left: 0;
+        top:0;     
+    } */
+
+/* ------------------mobile --------------------
+@media screen and (min-width: 320px) and (max-width: 488px) {
+
+    .view-container {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: #003933;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: 20% 20% 20% 20% 20%;
+    }
+
+    .beginning-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background: #003933;
+        margin-top:50%;
+    }
+
+    .subcontainer {
+        display: none;
+    }
+
+    -----------Inicio y registro-------------
+    .images-container,
+    .title-container {
+        display: none;
+    }
+
+
+    #login {
+        margin-top: 0%;
+        margin-left: 0px;
+        height: 50px;
+        width: 210px;
+        font-size: 20px;
+        
+    }
+
+    #register {
+        margin-top: 0%;
+        margin-left: 0px;
+        height: 50px;
+        width: 210px;
+        font-size: 20px;
+    }
+
+    .hr-beginning-center {
+        margin-top: 10px;
+        margin-left: 15px;
+        width: 160px;
+    } */
+>>>>>>> 84404b8a53a06b2202924dde55ab80d7cd4febb0
